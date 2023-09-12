@@ -18,9 +18,11 @@ a {
   --texto-conteudo-medium: 1.125rem;
   --texto-conteudo-pequeno: 1rem;
 
-  --branco:   #FFFFFF;
-  --preto:    #000000;
-  --cinza:    #E2E2E2;
+  --branco:       #FFFFFF;
+  --cinza:        #E2E2E2;
+  --preto:        #000000;
+  --preto-menos:  #202020;
+  --preto-rodape:  #121212;
 }
 body {
   font-family: var(--font);

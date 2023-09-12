@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: var(--preto);
+  background-color: var(--preto-rodape);
 }
 
 .rodape h2 {
