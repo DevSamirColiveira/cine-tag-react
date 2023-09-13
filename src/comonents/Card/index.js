@@ -1,12 +1,25 @@
+import { useFavoritoContext } from 'Contextos/Favoritos'
 import styles from './Card.module.css'
-import iconeFavoritar from './desfavoritar.svg'
+import iconeFavoritar from './desfavoritar.png'
+import iconeDesfavoritar from './favoritar.png'
 
 export default function Card({ id, titulo, capa }) {
+  const { favorito, adicionarFavorito } = useFavoritoContext();
+  const ehFavorito = favorito.some((fav) => fav.id ===id);
+  const icone = !ehFavorito ? iconeFavoritar : iconeDesfavoritar;
+
   return (
     <div className={styles.container}>
-      <img src={capa} alt={titulo} className={styles.capa} />
+      <img 
+        src={capa} 
+        alt={titulo} 
+        className={styles.capa}
+        onClick={() => {
+          adicionarFavorito({ id, titulo, capa})
+        }}
+      />
       <h2>{titulo}</h2>
-      <img src={iconeFavoritar}
+      <img src={icone}
         alt='Favoritar o filmes'
         className={styles.favoritar} />
     </div>
