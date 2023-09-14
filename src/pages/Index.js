@@ -2,9 +2,21 @@ import styles from './Index.module.css';
 import Banner from 'comonents/Banner';
 import Titulo from 'comonents/Titulo';
 import Card from 'comonents/Card';
-import videos from 'json/db.json';
+import { useEffect, useState } from 'react';
 
 export default function Inicio() {
+
+  // API
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch('https://my-json-server.typicode.com/DevSamirColiveira/cine-tag-react-api/videos')
+      .then(resposta => resposta.json())
+      .then(dados => {
+        setVideos(dados)
+      })
+  }, [])
+
   return (
     <>
       <Banner imagem="home" />
